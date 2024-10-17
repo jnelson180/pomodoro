@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <img src="tomato.svg">
+    <h1>Pomodoro Timer</h1>
+
+    <div class="config">
+      <label>
+        Session Length (minutes):
+        <input type="number" id="session-length" value="20" min="1">
+      </label>
+      <label>
+        Short Break Length (minutes):
+        <input type="number" id="short-break-length" value="5" min="1">
+      </label>
+      <label>
+        Long Break Length (minutes):
+        <input type="number" id="long-break-length" value="10" min="1">
+      </label>
+      <label>
+        Sessions Until Long Break:
+        <input type="number" id="break-count" value="3" min="1">
+      </label>
+    </div>
+
+    <div class="timer">
+      <p id="timer-display">20:00</p>
+    </div>
+    <div>
+      <div class="hidden" id="developer-tools">
+        <label for="debug-toggle">Debug Mode (5-second intervals):</label>
+        <input type="checkbox" id="debug-toggle" />
+      </div>
+    </div>
+
+    <div id="stats-display">
+      <p>Minutes until long break: <span id="minutes-until-long-break">0</span></p>
+      <p>Sessions completed: <span id="sessions-completed">0</span></p>
+    </div>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+    <p id="status">Session</p>
+  </div>
+  <audio id="alert-tone" src="alert.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
